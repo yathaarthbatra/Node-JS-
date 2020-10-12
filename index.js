@@ -70,3 +70,48 @@
 //-g for global
 
 ///////////////////////////////////////////////////////////
+
+//In node JS everyfile is said to be module and by default the
+//variables and member functions are private becasue of the IEFIE function.(Module Wrappr function)
+//so every module gets run inside this function and this is done on the backend.
+
+//////////////////////////////////////////////////////////
+//to create a simple Node server
+//Server: It handles all the HTTPS requests for the web Application
+//For eg Apache is the web server for Php and Java applications
+//Node Js provides capabalities to create our own web server which will handle the requests asynchronously
+//Although we can use Apache or any other server but it is recommended to make our own Node Js server.
+
+//We will create a server by HTTP module(inbuilt)
+//the Http.createServer() method is used to create the server which includes the request and response
+//arguements provided by Node JS.
+
+//The request object can be used to depict the information such as Url,data ,Http request etc.
+//The response object is used to send the response from the server to the web application back.
+
+// const http = require("http");
+// const server = http.createServer((req, res) => {
+//to know the URL details of the url type we use:
+//req.url-->This is used to tell the URL that user has typed
+// console.log(req.url);
+
+//   if (req.url == "/") {
+//     res.end("Hello from the Home page");
+//   } else if (req.url == "/Contacts") {
+//     res.end("Welcome to the Contacts Page");
+//   } else if (req.url == "/About") {
+//     res.end("Welcome to About Page");
+//   } else {
+//     res.writeHead(404); //It means that if the page is not present than in developer options
+//     //it shows 404 //i.e. The error exists
+//     res.end("Error Page:404");
+//   }
+
+//   //res.end("Hello from the server again"); //so we are sending the response back to the web page
+// });
+
+//BUt we have not sent the request till now . so we should also send the request
+//To listen the request , we have listen fun
+// server.listen(8000, "127.0.0.1", () => {
+//   console.log("The server has started again");
+// });
