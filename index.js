@@ -115,3 +115,84 @@
 // server.listen(8000, "127.0.0.1", () => {
 //   console.log("The server has started again");
 // });
+
+/////////////////////////////////////////////////////////////////////
+//JSON IN NODE JS:
+//JSON--> Javascript Object Notation
+//JSON is light weight format for storing and transporting the data
+//JSON is often used when sending the data from the server to the web page
+
+// const data = {
+//   name: "Yathaarth",
+//   age: 20,
+//   interest: "backend development",
+// };
+//now we have created an object named data
+
+//now to convert this object into JSON-->we use Stringify()
+//to convert JSON to object --> we use Parse()
+
+//so first converting the object into JSON
+//const jsondata = JSON.stringify(data);
+//jsondata is JSON now
+
+//const objdata = JSON.parse(jsondata);
+//now objdata is again an object
+
+//SO now we have to make this JS object into JSON
+//then transfer this JSON object to a new file
+//Then read the JSON data from that file
+//and finally convert it into new file
+// const fs = require("fs");
+
+// const jsondata = JSON.stringify(data);
+// fs.writeFile("file.json", jsondata, (err) => {
+//   console.log("File has been created");
+// });
+
+//now we have to read the json file
+// fs.readFile("file.json", "utf-8", (err, data) => {
+//   const objdata = JSON.parse(data);
+//   console.log(objdata);
+// });
+
+/////////////////////////////////////////////////////////////
+//CREATING A SIMPLE API:
+//API:--> APPLICATION PROGRAMMING INTERFACE
+//It is a software intermediary that allows two applications to talk to
+//each other Eg: Cheaking wether in the app
+//In this we request for the data
+//we create API in the JSON format
+
+//////////////////////////////////////////////////////////
+//EVENTS IN NODE JS:
+//Node js has inbuilt module called "Events"
+//where you can create , fire and listen for your events:
+
+const EventEmitter = require("events"); //we have declared a class
+//EventEmitter is different i.e its class
+const event = new EventEmitter(); //now we are creating an object
+
+//this is when the particular event took place
+event.on("Clicked", () => {
+  console.log("Event took place");
+});
+event.emit("Clicked"); //like a function call so this event happens
+
+//event definition should be declared previous than emit
+
+//to do multiple call back, we can declare more than one call back fun
+// event.on("Clicked", () => {
+//   console.log("Event took place");   //1st task
+// });
+
+// event.on("Clicked", () => {
+//   console.log("Event took place");  //2nd task
+// });
+
+// event.on("Clicked", () => {
+//   console.log("Event took place"); //3rd task
+// });
+
+//we can create our own event and even with one event we can
+//call back many functions
