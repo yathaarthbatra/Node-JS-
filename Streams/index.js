@@ -46,15 +46,19 @@ const server = http.createServer();
 server.on("request", (req, res) => {
   const rstream = fs.createReadStream("input.txt");
 
-  rstream.on("data", (chunk) => {
-    console.log("Data transmission started");
-    res.write(chunk);
-  });
-  rstream.on("end", () => {
-    res.end();
-    console.log("Data transmission ended");
-  });
+  //   rstream.on("data", (chunk) => {
+  //     console.log("Data transmission started");
+  //     res.write(chunk);
+  //   });
+  //   rstream.on("end", () => {
+  //     res.end();
+  //     console.log("Data transmission ended");
+  //   });
+
+  rstream.pipe(res); //only single line of code read--pipe--write
 });
+
+//instead of using lot of events by streams, we can use the stream Pipes
 
 server.listen(3000, "127.0.0.1", () => {
   console.log("Server started listening");
