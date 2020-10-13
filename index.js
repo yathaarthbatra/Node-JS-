@@ -169,15 +169,15 @@
 //Node js has inbuilt module called "Events"
 //where you can create , fire and listen for your events:
 
-const EventEmitter = require("events"); //we have declared a class
+//const EventEmitter = require("events"); //we have declared a class
 //EventEmitter is different i.e its class
-const event = new EventEmitter(); //now we are creating an object
+//const event = new EventEmitter(); //now we are creating an object
 
 //this is when the particular event took place
-event.on("Clicked", () => {
-  console.log("Event took place");
-});
-event.emit("Clicked"); //like a function call so this event happens
+//event.on("Clicked", () => {
+//console.log("Event took place");
+//});
+//event.emit("Clicked"); //like a function call so this event happens
 
 //event definition should be declared previous than emit
 
